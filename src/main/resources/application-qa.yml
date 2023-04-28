@@ -5,10 +5,13 @@ server:
 spring:
   application:
     name: "contactbook"
+  config:
+    activate:
+      on-profile: qa
 
   #database config
   datasource:
-    url: jdbc:postgresql://localhost:15432/contactbook?currentSchema=public
+    url: jdbc:postgresql://postgres-db:5432/contactbook?currentSchema=public
     username: root
     password: root
     driver-class-name: "org.postgresql.Driver"
