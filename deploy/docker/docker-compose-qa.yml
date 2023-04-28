@@ -15,19 +15,21 @@ services:
       - pg-db-network
     restart: always
 
-  pgadmin:
-    container_name: pgadmin
-    image: dpage/pgadmin4
+  contact-book-api:
+    container_name: contact-book-api
+    image: contact-book:latest
     environment:
-      PGADMIN_DEFAULT_EMAIL: "root@gmail.com"
-      PGADMIN_DEFAULT_PASSWORD: "root"
+      SERVER_PORT: 8090
+      SPRING_PROFILES_ACTIVE: qa
       TZ: "America/Sao_Paulo"
+      DB_USER: root
+      DB_PWD: root
     ports:
-      - "16543:80"
+        - "8087:8090"
     depends_on:
       - postgres-db
     networks:
-      - pg-db-network
+        - pg-db-network
     restart: always
 
 networks:

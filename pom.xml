@@ -95,6 +95,20 @@
 					</excludes>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>com.google.cloud.tools</groupId>
+				<artifactId>jib-maven-plugin</artifactId>
+				<version>3.0.0</version>
+				<configuration>
+					<to>
+						<image>contact-book</image>
+					</to>
+					<from>
+						<image>openjdk:17-jdk</image>
+					</from>
+					<!-- Configuração do plugin -->
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 	<repositories>
