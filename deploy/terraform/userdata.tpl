@@ -27,8 +27,8 @@ mkdir ~/project
 cd ~/project
 
 #clone your project from git repository
-git clone https://github.com/MarceloAraujo14/tutorial-spring-docker-terraform-aws.git
-#git clone https://github.com/brunopapait/spring-docker-terraform-aws.git
+# git clone https://github.com/MarceloAraujo14/tutorial-spring-docker-terraform-aws.git
+git clone https://github.com/brunopapait/spring-docker-terraform-aws.git
 cd spring-docker-terraform-aws
 git checkout main
 git pull
