@@ -45,3 +45,21 @@ resource "aws_route_table_association" "contact_route_table_association" {
   route_table_id = aws_route_table.contact_route_table.id
   subnet_id      = aws_subnet.contact_subnet.id
 }
+
+resource "aws_instance" "contact_ec2" {
+  instance_type = "t2.micro"
+  key_name = aws_key_pair.contact_key.id
+  vpc_security_group_ids = [aws_security_group.contact-sg.id]
+  subnet_id = aws_subnet.contact_subnet.id
+
+  ami = data.aws_ami.contact_ami.id
+
+  user_data = file("userdata.tpl")
+  root_block_device {
+    volume_size = 8
+  }
+
+    tags = {
+        Name = "contactbook_ec2"
+    }
+}
