@@ -17,7 +17,7 @@ services:
 
   contact-book-api:
     container_name: contact-book-api
-    image: contact-book:latest
+    image: marceloaraujo14/contact-book-api:latest
     environment:
       SERVER_PORT: 3000
       SPRING_PROFILES_ACTIVE: prod

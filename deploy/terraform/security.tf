@@ -35,7 +35,7 @@ resource "aws_security_group_rule" "srg_ssh_in" {
 }
 
 resource "aws_key_pair" "contact_key" {
-  key_name = "contact_key"
+  key_name   = "contact_key"
   public_key = file("~/.ssh/contactbook_key2.pub")
 }
 

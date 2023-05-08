@@ -47,10 +47,10 @@ resource "aws_route_table_association" "contact_route_table_association" {
 }
 
 resource "aws_instance" "contact_ec2" {
-  instance_type = "t2.micro"
-  key_name = aws_key_pair.contact_key.id
+  instance_type          = "t2.micro"
+  key_name               = aws_key_pair.contact_key.id
   vpc_security_group_ids = [aws_security_group.contact-sg.id]
-  subnet_id = aws_subnet.contact_subnet.id
+  subnet_id              = aws_subnet.contact_subnet.id
 
   ami = data.aws_ami.contact_ami.id
 
@@ -59,7 +59,7 @@ resource "aws_instance" "contact_ec2" {
     volume_size = 8
   }
 
-    tags = {
-        Name = "contactbook_ec2"
-    }
+  tags = {
+    Name = "contactbook_ec2"
+  }
 }
